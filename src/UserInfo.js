@@ -6,7 +6,6 @@ class UserInfo extends Component {
       <div>
         <p>Username: HeyBuddy</p>
         <p>Email: test@example.com </p>
-        
       </div>
     )
   }
