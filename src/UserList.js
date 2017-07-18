@@ -9,9 +9,8 @@ class UserList extends Component {
           <ul>
             {
               this.props.users.map((user) => {
-                return <UserInfo u={user}/>
-              }
-            )
+                return <UserInfo key={user.id} u={user}/>
+              })
             }
           </ul>
       </div>
