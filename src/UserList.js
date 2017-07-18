@@ -2,20 +2,17 @@ import React, { Component } from 'react';
 import UserInfo from './UserInfo';
 
 class UserList extends Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      users: []
-    }
-  }
-
   render() {
     return (
       <div>
         <h2>User List</h2>
           <ul>
-            <UserInfo />
+            {
+              this.props.users.map((user) => {
+                return <UserInfo u={user}/>
+              }
+            )
+            }
           </ul>
       </div>
     )

@@ -4,8 +4,8 @@ class UserInfo extends Component {
   render() {
     return (
       <div>
-        <p>Username: HeyBuddy</p>
-        <p>Email: test@example.com </p>
+        <p>Username: {this.props.u.username}</p>
+        <p>Email: {this.props.u.email}</p>
       </div>
     )
   }

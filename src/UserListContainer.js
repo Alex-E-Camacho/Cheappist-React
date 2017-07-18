@@ -6,14 +6,25 @@ class UserListContainer extends Component {
     super(props);
 
     this.state = {
-      users: []
+      users: [
+        {
+          id: 1,
+          username: "bob",
+          email: "bob@test.com"
+        },
+        {
+          id: 2,
+          username: "jane",
+          email: "jane@test.com"
+        }
+      ]
     }
   }
 
   render() {
     return (
       <div>
-        <UserList />
+        <UserList users={this.state.users}/>
       </div>
     )
   }
