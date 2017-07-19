@@ -6,19 +6,16 @@ class UserListContainer extends Component {
     super(props);
 
     this.state = {
-      users: [
-        {
-          id: 1,
-          username: "bob",
-          email: "bob@test.com"
-        },
-        {
-          id: 2,
-          username: "jane",
-          email: "jane@test.com"
-        }
-      ]
+      users: []
     }
+  }
+
+  componentWillMount() {
+    fetch('http://localhost:3001/v1/users').then((response) => {
+      response.json().then((json) => {
+        this.setState({users: json})
+      })
+    })
   }
 
   render() {
