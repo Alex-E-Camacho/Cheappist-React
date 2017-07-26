@@ -13,11 +13,14 @@ class App extends Component {
     this.searchOnSubmit = this.searchOnSubmit.bind(this);
   }
 
-  searchOnSubmit(searchedItem, searchedArea) {
-    fetch(`http://localhost:3000/v1/submissions/?location=${searchedArea}`).then((response) => {response.json().then((results) =>
-      this.setState({submissions: results})
-    )}
-  )}
+  searchOnSubmit(searchedItem) {
+    fetch(`http://localhost:3001/v1/submissions/?item=${searchedItem}`).then((response) => {
+      console.log(response);
+      response.json().then((json) => {
+        this.setState({submissions: json})
+      })
+    })
+  }
 
   render() {
     return (
