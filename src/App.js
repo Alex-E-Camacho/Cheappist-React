@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import NavBar from './NavBar';
 import SearchBar from './SearchBar';
+import ResultsContainer from './ResultsContainer';
 
 class App extends Component {
   constructor(props) {
@@ -27,7 +28,9 @@ class App extends Component {
       <div>
         <NavBar />
         <SearchBar onSearch={this.searchOnSubmit}/>
-        <p>{this.state.submissions.length}</p>
+          <div>
+            <ResultsContainer results={this.state.submissions} />
+          </div>
       </div>
     );
   }
