@@ -16,7 +16,15 @@ const ResultsContainer = ({results}) => {
 
   return (
     <div>
-      {searchResults}
+      <table>
+        <tr>
+          <th>Brand</th>
+          <th>Item</th>
+          <th>Price</th>
+          <th>Date Purchased</th>
+        </tr>
+          {searchResults}
+      </table>
     </div>
   )
 }

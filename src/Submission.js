@@ -6,14 +6,12 @@ const Submission = ({submission}) => {
   };
 
   return (
-    <p>
-      <div>
-        <p>{submission.brand}</p>
-        <p>{submission.description}</p>
-        <p>{submission.price}</p>
-        <p>{submission.date_purchased}</p>
-      </div>
-    </p>
+        <tr>
+          <td>{submission.brand}</td>
+          <td>{submission.description}</td>
+          <td>{submission.price}</td>
+          <td>{submission.date_purchased}</td>
+        </tr>
   )
 }
 
