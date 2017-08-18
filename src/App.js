@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar';
-import SearchBar from './SearchBar';
-import ResultsContainer from './ResultsContainer';
+import { BrowserRouter, Route } from 'react-router-dom';
+import LandingPage from './landing_page';
 
 class App extends Component {
   constructor(props) {
@@ -25,13 +24,9 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        <NavBar />
-        <SearchBar onSearch={this.searchOnSubmit}/>
-          <div>
-            <ResultsContainer results={this.state.submissions} />
-          </div>
-      </div>
+      <BrowserRouter>
+            <Route exact path="/" render={() => <LandingPage onSearch={this.searchOnSubmit} />} />
+      </BrowserRouter>
     );
   }
 }
