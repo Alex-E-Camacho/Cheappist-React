@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 class SearchBar extends Component {
   constructor(props) {
@@ -6,7 +7,8 @@ class SearchBar extends Component {
 
     this.state = {
       searchedItem: '',
-      searchedArea: ''
+      searchedArea: '',
+      fireRedirect: false
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,9 +26,12 @@ class SearchBar extends Component {
     e.preventDefault();
     let input = this.state.searchedItem;
     this.props.onSearch(input);
+    this.setState({fireRedirect: true})
   }
 
   render() {
+    const { fireRedirect } = this.state
+
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -44,6 +49,7 @@ class SearchBar extends Component {
           />
           <input type="submit" value="Search" />
         </form>
+        {fireRedirect && (<Redirect to="/submissions" />)}
       </div>
     )
   };

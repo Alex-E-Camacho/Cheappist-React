@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LandingPage from './landing_page';
-
+import ResultsPage from './results_page';
 class App extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +25,10 @@ class App extends Component {
   render() {
     return (
       <BrowserRouter>
+        <Switch>
             <Route exact path="/" render={() => <LandingPage onSearch={this.searchOnSubmit} />} />
+            <Route path="/submissions" render={() => <ResultsPage results={this.state.submissions} onSearch={this.searchOnSubmit}/>} />
+        </Switch>
       </BrowserRouter>
     );
   }

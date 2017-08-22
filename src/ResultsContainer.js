@@ -10,6 +10,7 @@ const ResultsContainer = ({results}) => {
     return (
       <Submission
         submission={submission}
+        key={submission.id}
       />
     )
   })
@@ -17,13 +18,15 @@ const ResultsContainer = ({results}) => {
   return (
     <div>
       <table>
-        <tr>
-          <th>Brand</th>
-          <th>Item</th>
-          <th>Price</th>
-          <th>Date Purchased</th>
-        </tr>
-          {searchResults}
+        <tbody>
+          <tr>
+            <th>Brand</th>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Date Purchased</th>
+          </tr>
+            {searchResults}
+            </tbody>
       </table>
     </div>
   )
